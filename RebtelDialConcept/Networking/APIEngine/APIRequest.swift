@@ -10,7 +10,7 @@ import Foundation
 
 enum ResultType<T: APIRequest>{
     case success(result: T.Response)
-    case failure(error: ErrorHandler<T>)
+    case failure(error: APIErrorHandler<T>)
 }
 
 protocol APIRequest {

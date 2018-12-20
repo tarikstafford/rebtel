@@ -52,34 +52,35 @@ extension APIClient {
     
     func send<T: APIRequest>(_ request: T, completion: @escaping (ResultType<T>) -> Void) -> URLSessionDataTask? {
         
-        let errorCallback: (ErrorHandler<T>) -> Void = {
+        let errorCallback: (APIErrorHandler<T>) -> Void = {
             completion(.failure(error: $0))
         }
         
         guard let urlRequest = buildRequest(for: request) else {
-            errorCallback(ErrorHandler.client)
+            errorCallback(APIErrorHandler.client)
             return nil
         }
         
         let task = session.dataTask(with: urlRequest) { (data, response, error) in
-            guard let httpResponse = response as? HTTPURLResponse else {return }
+            print(response)
+            guard let httpResponse = response as? HTTPURLResponse else { return }
             
             let statusCode = ResponseStatus.init(code: httpResponse.statusCode)
             
             guard statusCode == .ok else {
-                errorCallback(ErrorHandler.network(client: request, statusCode: statusCode))
+                errorCallback(APIErrorHandler.network(client: request, statusCode: statusCode))
                 return
             }
             
             guard let data = data else {
-                errorCallback(ErrorHandler.noData)
+                errorCallback(APIErrorHandler.noData)
                 return
             }
             
             do {
                 completion(.success(result: try  JSONDecoder().decode(T.Response.self, from: data)))
             } catch let error {
-                errorCallback(ErrorHandler.decoding(reason: error.localizedDescription))
+                errorCallback(APIErrorHandler.decoding(reason: error.localizedDescription))
             }
         }
         

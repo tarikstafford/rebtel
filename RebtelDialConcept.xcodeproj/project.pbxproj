@@ -16,8 +16,11 @@
 		36EA201F21C7B59900CAC1D2 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 36EA201E21C7B59900CAC1D2 /* countries.json */; };
 		36EA202121C7C76C00CAC1D2 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA202021C7C76C00CAC1D2 /* APIRequest.swift */; };
 		36EA202421C7C7E700CAC1D2 /* NetworkEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA202321C7C7E700CAC1D2 /* NetworkEnums.swift */; };
-		36EA202621C7C82500CAC1D2 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA202521C7C82500CAC1D2 /* ErrorHandler.swift */; };
+		36EA202621C7C82500CAC1D2 /* APIErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA202521C7C82500CAC1D2 /* APIErrorHandler.swift */; };
 		36EA202821C7C99300CAC1D2 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA202721C7C99300CAC1D2 /* APIClient.swift */; };
+		36EA202E21CA122400CAC1D2 /* RotatingCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA202D21CA122400CAC1D2 /* RotatingCollectionLayout.swift */; };
+		36EA203521CA22AF00CAC1D2 /* CountryRotatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA203321CA22AF00CAC1D2 /* CountryRotatingCell.swift */; };
+		36EA203621CA22AF00CAC1D2 /* CountryRotatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36EA203421CA22AF00CAC1D2 /* CountryRotatingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +35,11 @@
 		36EA201E21C7B59900CAC1D2 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		36EA202021C7C76C00CAC1D2 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		36EA202321C7C7E700CAC1D2 /* NetworkEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnums.swift; sourceTree = "<group>"; };
-		36EA202521C7C82500CAC1D2 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		36EA202521C7C82500CAC1D2 /* APIErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorHandler.swift; sourceTree = "<group>"; };
 		36EA202721C7C99300CAC1D2 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		36EA202D21CA122400CAC1D2 /* RotatingCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingCollectionLayout.swift; sourceTree = "<group>"; };
+		36EA203321CA22AF00CAC1D2 /* CountryRotatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRotatingCell.swift; sourceTree = "<group>"; };
+		36EA203421CA22AF00CAC1D2 /* CountryRotatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryRotatingCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				36EA1A0021C7715A00CAC1D2 /* RebtelDialConcept */,
+				36EA201E21C7B59900CAC1D2 /* countries.json */,
 				36EA19FF21C7715A00CAC1D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,10 +74,10 @@
 			isa = PBXGroup;
 			children = (
 				36EA1A0D21C7715B00CAC1D2 /* Info.plist */,
-				36EA1A1321C771E000CAC1D2 /* Country.swift */,
+				36EA202B21C9F62A00CAC1D2 /* ViewControllers */,
+				36EA202A21C9F5D500CAC1D2 /* Models */,
 				36EA202221C7C7D000CAC1D2 /* Networking */,
-				36EA1A0321C7715A00CAC1D2 /* MainController.swift */,
-				36EA201E21C7B59900CAC1D2 /* countries.json */,
+				36EA203721CB979A00CAC1D2 /* Views */,
 				36EA201B21C77E5600CAC1D2 /* App Files */,
 			);
 			path = RebtelDialConcept;
@@ -89,7 +96,6 @@
 		36EA202221C7C7D000CAC1D2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				36EA1A1521C7730100CAC1D2 /* CountryService.swift */,
 				36EA202921C8E67600CAC1D2 /* APIEngine */,
 			);
 			path = Networking;
@@ -101,9 +107,44 @@
 				36EA202021C7C76C00CAC1D2 /* APIRequest.swift */,
 				36EA202721C7C99300CAC1D2 /* APIClient.swift */,
 				36EA202321C7C7E700CAC1D2 /* NetworkEnums.swift */,
-				36EA202521C7C82500CAC1D2 /* ErrorHandler.swift */,
+				36EA202521C7C82500CAC1D2 /* APIErrorHandler.swift */,
 			);
 			path = APIEngine;
+			sourceTree = "<group>";
+		};
+		36EA202A21C9F5D500CAC1D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				36EA202C21CA06C000CAC1D2 /* Country */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		36EA202B21C9F62A00CAC1D2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				36EA1A0321C7715A00CAC1D2 /* MainController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		36EA202C21CA06C000CAC1D2 /* Country */ = {
+			isa = PBXGroup;
+			children = (
+				36EA1A1321C771E000CAC1D2 /* Country.swift */,
+				36EA1A1521C7730100CAC1D2 /* CountryService.swift */,
+			);
+			path = Country;
+			sourceTree = "<group>";
+		};
+		36EA203721CB979A00CAC1D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				36EA202D21CA122400CAC1D2 /* RotatingCollectionLayout.swift */,
+				36EA203321CA22AF00CAC1D2 /* CountryRotatingCell.swift */,
+				36EA203421CA22AF00CAC1D2 /* CountryRotatingCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36EA203621CA22AF00CAC1D2 /* CountryRotatingCell.xib in Resources */,
 				36EA201F21C7B59900CAC1D2 /* countries.json in Resources */,
 				36EA1A0C21C7715B00CAC1D2 /* LaunchScreen.storyboard in Resources */,
 				36EA1A0921C7715B00CAC1D2 /* Assets.xcassets in Resources */,
@@ -177,8 +219,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36EA203521CA22AF00CAC1D2 /* CountryRotatingCell.swift in Sources */,
 				36EA1A0421C7715A00CAC1D2 /* MainController.swift in Sources */,
-				36EA202621C7C82500CAC1D2 /* ErrorHandler.swift in Sources */,
+				36EA202E21CA122400CAC1D2 /* RotatingCollectionLayout.swift in Sources */,
+				36EA202621C7C82500CAC1D2 /* APIErrorHandler.swift in Sources */,
 				36EA1A1621C7730100CAC1D2 /* CountryService.swift in Sources */,
 				36EA202821C7C99300CAC1D2 /* APIClient.swift in Sources */,
 				36EA1A1421C771E000CAC1D2 /* Country.swift in Sources */,
