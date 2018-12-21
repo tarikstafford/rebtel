@@ -23,6 +23,7 @@ class MainController: UIViewController {
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.showsHorizontalScrollIndicator = false
         cv.backgroundColor = .clear
+        cv.decelerationRate = .fast
         cv.delegate = self
         cv.dataSource = self
         return cv
@@ -38,6 +39,13 @@ class MainController: UIViewController {
         sB.tintColor = .yellow
         sB.translatesAutoresizingMaskIntoConstraints = false
         return sB
+    }()
+    
+    lazy var countryDisplay: CountryDisplayView = {
+       let cD = CountryDisplayView.init(country: nil, frame: CGRect.zero)
+        cD.translatesAutoresizingMaskIntoConstraints = false
+        cD.backgroundColor = .green
+        return cD
     }()
     
     lazy var stackViewRegionButtons: UIStackView = {
@@ -71,9 +79,12 @@ class MainController: UIViewController {
         
         let nib = UINib.init(nibName: "CountryRotatingCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "CountryRotatingCell")
+        
+        self.view.backgroundColor = .gray
     
         self.view.addSubview(collectionView)
         self.view.addSubview(searchBar)
+        self.view.addSubview(countryDisplay)
         
         NSLayoutConstraint.activate([
             collectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
@@ -84,7 +95,12 @@ class MainController: UIViewController {
             searchBar.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
             searchBar.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             searchBar.heightAnchor.constraint(equalToConstant: 75),
-            searchBar.widthAnchor.constraint(equalTo: self.view.widthAnchor)
+            searchBar.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            
+            countryDisplay.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            countryDisplay.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+            countryDisplay.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            countryDisplay.rightAnchor.constraint(equalTo: self.view.rightAnchor)
             ])
     
         fetchAll()
@@ -160,7 +176,7 @@ extension MainController: UISearchBarDelegate {
         
         // Reset the datasource if search query is deleted
         guard !searchText.isEmpty else {
-            self.countries = countriesCopy
+            self.countries = countriesCopy.sorted(by: { $0.name < $1.name })
             return
         }
         

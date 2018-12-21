@@ -39,7 +39,7 @@ class RotatingCollectionLayout: UICollectionViewLayout {
     
     var angleProvided: CGFloat {
         get{
-            return tan((itemSize.width + 5)/radius)
+            return tan((itemSize.width + gap)/radius)
         }
     }
     
@@ -48,6 +48,8 @@ class RotatingCollectionLayout: UICollectionViewLayout {
             invalidateLayout()
         }
     }
+    
+    var mostRecentOffset : CGPoint = CGPoint()
     
     override var collectionViewContentSize: CGSize {
         get{
@@ -65,10 +67,12 @@ class RotatingCollectionLayout: UICollectionViewLayout {
     override func prepare() {
         super.prepare()
         guard let collectionView = collectionView else { return }
+        
+        // This gives us the radian range of what is visible (approx) -theta(left) | 0 (center) | +theta(right)
         let theta = atan2(((collectionView.bounds.width) / 2.0), (radius + (itemSize.height / 2.0) - (collectionView.bounds.height) / 2.0))
         var startIndex = 0
         var endIndex = collectionView.numberOfItems(inSection: 0) - 1
-
+        
         if (angle < -theta) {
             startIndex = Int(floor((-theta - angle) / angleProvided))
         }
@@ -79,6 +83,7 @@ class RotatingCollectionLayout: UICollectionViewLayout {
             endIndex = 0
             startIndex = 0
         }
+        
         let anchorPointY = (radius - itemSize.height/2)/itemSize.height
         let centerX = collectionView.contentOffset.x + collectionView.bounds.width / 2
         layoutAttributes = (startIndex...endIndex).map({
@@ -105,10 +110,40 @@ class RotatingCollectionLayout: UICollectionViewLayout {
 }
 
 extension RotatingCollectionLayout {
-    // MARK: To Do - Add Snapping and adjustment of rotating by multiples of theta - this should give a rotation motation fixed on item centers?
-//    override func indexPathsToDeleteForDecorationView(ofKind elementKind: String) -> [IndexPath] {
-//        <#code#>
-//    }
+
+    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        guard let collectionView = collectionView else { return mostRecentOffset }
+
+        var finalContentOffset = proposedContentOffset
+        
+        /*  Here we get the angle of the last item #angleAtEnd
+         we then define #angular distance as the theta from
+         item n to item n+1. Divide that by the reamining distance
+         between the end of the collectionView bounds and the end
+         of the collectionViewContentSize width. Giving us the distance
+         per degree of rotation. With the proposed angle, we can divide that
+         by the angleProvided (the actual angle between item n and n+1),
+         giving us some value, and pure integer value here would indicate
+         that the object is in the center at the end of a rotation.
+         Multiplier snaps the cell up or down depending on direction.
+         */
+        
+        let remainingOffset = collectionViewContentSize.width -
+            collectionView.bounds.width
+        let xDistancePerRadian = -angleAtEnd/remainingOffset
+        let proposedAngle = proposedContentOffset.x*xDistancePerRadian
+        let ratio = proposedAngle/angleProvided
+        var multiplier: CGFloat
+        if (velocity.x > 0) {
+            multiplier = ceil(ratio)
+        } else if (velocity.x < 0) {
+            multiplier = floor(ratio)
+        } else {
+            multiplier = round(ratio)
+        }
+        finalContentOffset.x = multiplier*angleProvided/xDistancePerRadian
+        return finalContentOffset
+    }
     
     override func invalidateLayout() {
         self.layoutAttributes.removeAll()

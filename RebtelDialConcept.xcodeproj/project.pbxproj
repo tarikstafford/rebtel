@@ -21,6 +21,7 @@
 		36EA202E21CA122400CAC1D2 /* RotatingCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA202D21CA122400CAC1D2 /* RotatingCollectionLayout.swift */; };
 		36EA203521CA22AF00CAC1D2 /* CountryRotatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA203321CA22AF00CAC1D2 /* CountryRotatingCell.swift */; };
 		36EA203621CA22AF00CAC1D2 /* CountryRotatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36EA203421CA22AF00CAC1D2 /* CountryRotatingCell.xib */; };
+		36EA203921CCE1BB00CAC1D2 /* CountryDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA203821CCE1BB00CAC1D2 /* CountryDisplayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		36EA202D21CA122400CAC1D2 /* RotatingCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingCollectionLayout.swift; sourceTree = "<group>"; };
 		36EA203321CA22AF00CAC1D2 /* CountryRotatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRotatingCell.swift; sourceTree = "<group>"; };
 		36EA203421CA22AF00CAC1D2 /* CountryRotatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryRotatingCell.xib; sourceTree = "<group>"; };
+		36EA203821CCE1BB00CAC1D2 /* CountryDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDisplayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				36EA202D21CA122400CAC1D2 /* RotatingCollectionLayout.swift */,
 				36EA203321CA22AF00CAC1D2 /* CountryRotatingCell.swift */,
 				36EA203421CA22AF00CAC1D2 /* CountryRotatingCell.xib */,
+				36EA203821CCE1BB00CAC1D2 /* CountryDisplayView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			files = (
 				36EA203521CA22AF00CAC1D2 /* CountryRotatingCell.swift in Sources */,
 				36EA1A0421C7715A00CAC1D2 /* MainController.swift in Sources */,
+				36EA203921CCE1BB00CAC1D2 /* CountryDisplayView.swift in Sources */,
 				36EA202E21CA122400CAC1D2 /* RotatingCollectionLayout.swift in Sources */,
 				36EA202621C7C82500CAC1D2 /* APIErrorHandler.swift in Sources */,
 				36EA1A1621C7730100CAC1D2 /* CountryService.swift in Sources */,
