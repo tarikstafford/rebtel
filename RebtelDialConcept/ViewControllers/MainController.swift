@@ -31,20 +31,20 @@ class MainController: UIViewController {
     
     lazy var searchBar: UISearchBar = {
         let sB = UISearchBar()
-        sB.layer.borderColor = UIColor.clear.cgColor
-        sB.layer.borderWidth = 0
         sB.delegate = self
         sB.placeholder = "Filter countries..."
-        sB.barTintColor = .red
-        sB.tintColor = .yellow
+        sB.barTintColor = Theme.primaryColor
+        sB.tintColor = UIColor.synthPurple
         sB.translatesAutoresizingMaskIntoConstraints = false
+        sB.layer.borderWidth = 1
+        sB.layer.borderColor = Theme.primaryColor.cgColor
         return sB
     }()
     
     lazy var countryDisplay: CountryDisplayView = {
        let cD = CountryDisplayView.init(country: nil, frame: CGRect.zero)
         cD.translatesAutoresizingMaskIntoConstraints = false
-        cD.backgroundColor = .green
+        cD.backgroundColor = Theme.primaryColor
         return cD
     }()
     
@@ -72,38 +72,51 @@ class MainController: UIViewController {
     }
     
     var countriesCopy = [Country]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         let nib = UINib.init(nibName: "CountryRotatingCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "CountryRotatingCell")
         
-        self.view.backgroundColor = .gray
+        self.view.backgroundColor = .white
+        self.title = "Country Finder"
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = Theme.primaryColor
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font: Theme.headerFont,
+            NSAttributedString.Key.foregroundColor:UIColor.white
+        ]
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        let sortbutton = UIBarButtonItem.init(title: "SORT", style: .plain, target: self, action: #selector(sort))
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = sortbutton
+        
+        addViews()
+        fetchAll()
+    }
     
-        self.view.addSubview(collectionView)
+    fileprivate func addViews() {
         self.view.addSubview(searchBar)
+        self.view.addSubview(collectionView)
         self.view.addSubview(countryDisplay)
         
         NSLayoutConstraint.activate([
-            collectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            collectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            collectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height*0.3),
-            
-            searchBar.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
+            searchBar.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             searchBar.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            searchBar.heightAnchor.constraint(equalToConstant: 75),
+            searchBar.heightAnchor.constraint(equalToConstant: 50),
             searchBar.widthAnchor.constraint(equalTo: self.view.widthAnchor),
             
-            countryDisplay.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            collectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            collectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            collectionView.topAnchor.constraint(equalTo: self.searchBar.bottomAnchor),
+            collectionView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height*0.3),
+            
+            countryDisplay.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
             countryDisplay.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
             countryDisplay.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             countryDisplay.rightAnchor.constraint(equalTo: self.view.rightAnchor)
             ])
-    
-        fetchAll()
     }
     
     fileprivate func fetchAll(){
@@ -114,18 +127,12 @@ class MainController: UIViewController {
         self.countries = countries
     }
     
-    fileprivate func fetchCountry(for code: String, indexPath: IndexPath) {
-        _ = CountryAPIService.countryAPIServiceShared.send(FetchCountry.init(isoCode: code), completion: { (result) in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case.success(let response):
-                DispatchQueue.main.async {
-                    self.countries[indexPath.row] = response
-                    self.loadDisplay(for: self.countries[indexPath.row])
-                }
-            }
-        })
+    fileprivate func updateDatasource(for country: Country) {
+        
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 
@@ -151,22 +158,54 @@ extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let country = countries[indexPath.row]
         
+        // Load name first
+        countryDisplay.country = country
+        
+        loadData(for: country, indexPath: indexPath)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let midPoint = collectionView.bounds.width/2 + collectionView.contentOffset.x
+        
+        collectionView.visibleCells.forEach({ (cell) in
+            if midPoint > cell.frame.minX && midPoint < cell.frame.maxY {
+                guard let indexPath = self.collectionView.indexPath(for: cell) else {
+                    // Handle Error
+                    return
+                }
+                let country = self.countries[indexPath.row]
+                self.loadData(for: country, indexPath: indexPath)
+            }
+        })
+    }
+    
+    private func loadData(for country: Country, indexPath: IndexPath) {
+        // Unwrap ISO
         guard let iso = country.iso else {
             let alert = UIAlertController.init(title: "Invalid ISO Code", message: "Country code not found", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default))
             present(alert, animated: true, completion: nil)
             return
-            }
+        }
         
-        guard country.capital != nil else {
-            loadDisplay(for: country)
+        // Check if the data has already been called ( this needs to be tested )
+        guard country.capital == nil else {
+            self.countryDisplay.country = countries[indexPath.row]
             return
+        }
+        
+        // If not fetch the data and then push it to the display & update the datasource ( this needs to be tested )
+        _ = CountryAPIService.countryAPIServiceShared.send(FetchCountry.init(isoCode: iso), completion: { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case.success(let response):
+                DispatchQueue.main.async {
+                    self.countryDisplay.country = response
+                    self.updateDatasource(for: response)
+                }
             }
-        fetchCountry(for: iso, indexPath: indexPath)
-    }
-    
-    func loadDisplay(for country: Country) {
-        print(country)
+        })
     }
 }
 
@@ -184,8 +223,7 @@ extension MainController: UISearchBarDelegate {
         
         /*
          Create a set to create uniquness - this enables us to make the copy
-         additive so we always query the complete collection of objects and it
-         avoids duplication.
+         additive so we always query the complete collection of objects.
          */
         
         let set = Set(self.countriesCopy)
@@ -200,5 +238,11 @@ extension MainController: UISearchBarDelegate {
         }
         
         self.countries = filteredCountries
+    }
+}
+
+extension MainController {
+    @objc func sort() {
+        print("PRESSED")
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		369DE0E421CE1A9600921391 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369DE0E321CE1A9600921391 /* Theme.swift */; };
 		36EA1A0221C7715A00CAC1D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA1A0121C7715A00CAC1D2 /* AppDelegate.swift */; };
 		36EA1A0421C7715A00CAC1D2 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EA1A0321C7715A00CAC1D2 /* MainController.swift */; };
 		36EA1A0921C7715B00CAC1D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36EA1A0821C7715B00CAC1D2 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		369DE0E321CE1A9600921391 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		36EA19FE21C7715A00CAC1D2 /* RebtelDialConcept.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RebtelDialConcept.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36EA1A0121C7715A00CAC1D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36EA1A0321C7715A00CAC1D2 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				36EA202221C7C7D000CAC1D2 /* Networking */,
 				36EA203721CB979A00CAC1D2 /* Views */,
 				36EA201B21C77E5600CAC1D2 /* App Files */,
+				369DE0E321CE1A9600921391 /* Theme.swift */,
 			);
 			path = RebtelDialConcept;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				36EA202821C7C99300CAC1D2 /* APIClient.swift in Sources */,
 				36EA1A1421C771E000CAC1D2 /* Country.swift in Sources */,
 				36EA202121C7C76C00CAC1D2 /* APIRequest.swift in Sources */,
+				369DE0E421CE1A9600921391 /* Theme.swift in Sources */,
 				36EA1A0221C7715A00CAC1D2 /* AppDelegate.swift in Sources */,
 				36EA202421C7C7E700CAC1D2 /* NetworkEnums.swift in Sources */,
 			);
