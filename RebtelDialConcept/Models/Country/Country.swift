@@ -9,7 +9,7 @@
 import UIKit
 
 enum Region: String, Codable {
-    case Africa, Asia, Oceania, Americas, Europe, Error
+    case Africa, Asia, Oceania, Americas, Europe, Polar, Error
 }
 
 extension Region: CaseIterable {}
@@ -33,8 +33,8 @@ struct Country: Codable {
     let currencies: [Currency]?
     let region: Region?
     
-    private enum CodkingKeys: String, CodingKey {
-        case iso = "alpha2code", name, capital, population, currencies, region
+    enum CodingKeys: String, CodingKey {
+        case iso = "alpha2Code", name, capital, population, currencies, region
     }
     
     func getImage(type: ImageType) -> UIImage? {

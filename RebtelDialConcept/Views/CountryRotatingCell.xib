@@ -19,20 +19,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kNh-fp-IPY">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ire-Iv-4on">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ire-Iv-4on">
+                        <rect key="frame" x="3" y="3" width="94" height="94"/>
                     </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="kNh-fp-IPY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="AyC-Dp-zYI"/>
-                <constraint firstAttribute="trailing" secondItem="kNh-fp-IPY" secondAttribute="trailing" id="R0w-oI-pNz"/>
-                <constraint firstItem="kNh-fp-IPY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pMJ-cU-DjH"/>
-                <constraint firstAttribute="bottom" secondItem="kNh-fp-IPY" secondAttribute="bottom" id="twz-EJ-r9z"/>
+                <constraint firstItem="ire-Iv-4on" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="IYH-cd-ajL"/>
+                <constraint firstAttribute="trailing" secondItem="ire-Iv-4on" secondAttribute="trailing" constant="3" id="igX-s0-O7f"/>
+                <constraint firstItem="ire-Iv-4on" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="3" id="iq3-d9-3bu"/>
+                <constraint firstAttribute="bottom" secondItem="ire-Iv-4on" secondAttribute="bottom" constant="3" id="pdS-A5-NJk"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="121" height="114"/>

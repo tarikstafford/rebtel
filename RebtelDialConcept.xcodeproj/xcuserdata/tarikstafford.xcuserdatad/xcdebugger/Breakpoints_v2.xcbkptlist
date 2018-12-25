@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Networking/APIEngine/APIClient.swift"
-            timestampString = "567322064.026472"
+            timestampString = "567411759.921594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Networking/APIEngine/APIClient.swift"
-            timestampString = "567322064.0265861"
+            timestampString = "567411759.921674"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -74,7 +74,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Networking/APIEngine/APIClient.swift"
-            timestampString = "567322064.02665"
+            timestampString = "567411759.9217319"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "send(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RebtelDialConcept/Networking/APIEngine/APIClient.swift"
+            timestampString = "567411759.921785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
@@ -90,23 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Networking/APIEngine/APIClient.swift"
-            timestampString = "567322064.026709"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "send(_:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RebtelDialConcept/Networking/APIEngine/APIClient.swift"
-            timestampString = "567322064.0267659"
+            timestampString = "567411759.9218349"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Networking/APIEngine/APIClient.swift"
-            timestampString = "567322064.026823"
+            timestampString = "567411759.921885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Networking/APIEngine/APIClient.swift"
-            timestampString = "567322064.026877"
+            timestampString = "567411759.921935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Networking/APIEngine/APIClient.swift"
-            timestampString = "567322064.026933"
+            timestampString = "567411759.9220001"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Networking/APIEngine/APIClient.swift"
-            timestampString = "567322064.026988"
+            timestampString = "567411759.9220639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Networking/APIEngine/APIClient.swift"
-            timestampString = "567322064.027041"
+            timestampString = "567411759.922128"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Networking/APIEngine/APIClient.swift"
-            timestampString = "567322064.027095"
+            timestampString = "567411759.92219"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "send(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Networking/APIEngine/APIClient.swift"
-            timestampString = "567322064.02715"
+            timestampString = "567411759.9222521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
@@ -266,7 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Networking/APIEngine/APIClient.swift"
-            timestampString = "567322064.027203"
+            timestampString = "567411759.922313"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -282,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Networking/APIEngine/APIClient.swift"
-            timestampString = "567322064.027256"
+            timestampString = "567411759.922375"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Networking/APIEngine/APIClient.swift"
-            timestampString = "567322064.027311"
+            timestampString = "567411759.922437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "send(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -394,7 +394,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.036333"
+            timestampString = "567411759.922642"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -410,7 +410,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.036937"
+            timestampString = "567411759.922716"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -426,7 +426,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.037073"
+            timestampString = "567411759.922778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -442,7 +442,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.0371751"
+            timestampString = "567411759.922837"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -458,7 +458,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.037272"
+            timestampString = "567411759.922895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -474,7 +474,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.037367"
+            timestampString = "567411759.922955"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
@@ -490,7 +490,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.037465"
+            timestampString = "567411759.923012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -506,7 +506,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.03756"
+            timestampString = "567411759.923069"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -522,7 +522,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.037652"
+            timestampString = "567411759.9231271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
@@ -538,7 +538,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.037743"
+            timestampString = "567411759.9231859"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
@@ -554,7 +554,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.037834"
+            timestampString = "567411759.923242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -570,7 +570,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.037921"
+            timestampString = "567411759.923298"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -586,7 +586,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.038007"
+            timestampString = "567411759.923357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
@@ -602,7 +602,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.038095"
+            timestampString = "567411759.9234149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -618,7 +618,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.0381809"
+            timestampString = "567411759.923472"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
@@ -634,7 +634,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.038267"
+            timestampString = "567411759.923529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -650,7 +650,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.038352"
+            timestampString = "567411759.923586"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
@@ -666,7 +666,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.038439"
+            timestampString = "567411759.923643"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
@@ -682,7 +682,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.03856"
+            timestampString = "567411759.9237"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -730,7 +730,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.038645"
+            timestampString = "567411759.923757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -746,7 +746,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.038728"
+            timestampString = "567411759.9238141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -762,7 +762,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.038808"
+            timestampString = "567411759.923872"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "92"
@@ -778,7 +778,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.038905"
+            timestampString = "567411759.923929"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -794,7 +794,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.038996"
+            timestampString = "567411759.923986"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
@@ -810,12 +810,188 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RebtelDialConcept/Views/RotatingCollectionLayout.swift"
-            timestampString = "567076800.039077"
+            timestampString = "567411759.9240431"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
             endingLineNumber = "95"
             landmarkName = "prepare()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RebtelDialConcept/ViewControllers/MainController.swift"
+            timestampString = "567411759.924103"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "scrollViewDidEndDecelerating(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RebtelDialConcept/ViewControllers/MainController.swift"
+            timestampString = "567411759.924181"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "scrollViewDidEndDecelerating(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RebtelDialConcept/ViewControllers/MainController.swift"
+            timestampString = "567411759.924253"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "scrollViewDidEndDecelerating(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RebtelDialConcept/ViewControllers/MainController.swift"
+            timestampString = "567411759.924324"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "scrollViewDidEndDecelerating(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RebtelDialConcept/ViewControllers/MainController.swift"
+            timestampString = "567411759.924397"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RebtelDialConcept/ViewControllers/MainController.swift"
+            timestampString = "567411759.9244649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "updateDatasource(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RebtelDialConcept/ViewControllers/MainController.swift"
+            timestampString = "567411759.9245321"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "updateDatasource(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RebtelDialConcept.MainController.(updateDatasource in _85B34BC94C0B4B5145F3E983ADD3340A)(for: RebtelDialConcept.Country) -&gt; ()"
+                  moduleName = "RebtelDialConcept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tarikstafford/Desktop/Projects/RebtelDialConcept/RebtelDialConcept/ViewControllers/MainController.swift"
+                  timestampString = "567405466.06653"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RebtelDialConcept.Country) -&gt; Swift.Bool in RebtelDialConcept.MainController.(updateDatasource in _85B34BC94C0B4B5145F3E983ADD3340A)(for: RebtelDialConcept.Country) -&gt; ()"
+                  moduleName = "RebtelDialConcept"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tarikstafford/Desktop/Projects/RebtelDialConcept/RebtelDialConcept/ViewControllers/MainController.swift"
+                  timestampString = "567405466.06891"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "39">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RebtelDialConcept/ViewControllers/MainController.swift"
+            timestampString = "567411759.924601"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "countries"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RebtelDialConcept/ViewControllers/MainController.swift"
+            timestampString = "567411759.924665"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

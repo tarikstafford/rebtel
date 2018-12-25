@@ -62,7 +62,6 @@ extension APIClient {
         }
         
         let task = session.dataTask(with: urlRequest) { (data, response, error) in
-            print(response)
             guard let httpResponse = response as? HTTPURLResponse else { return }
             
             let statusCode = ResponseStatus.init(code: httpResponse.statusCode)

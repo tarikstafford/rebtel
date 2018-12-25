@@ -81,14 +81,7 @@ class MainController: UIViewController {
         
         self.view.backgroundColor = .white
         self.title = "Country Finder"
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = Theme.primaryColor
-        self.navigationController?.navigationBar.tintColor = .white
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.font: Theme.headerFont,
-            NSAttributedString.Key.foregroundColor:UIColor.white
-        ]
-        self.navigationController?.navigationBar.shadowImage = UIImage()
+       
         let sortbutton = UIBarButtonItem.init(title: "SORT", style: .plain, target: self, action: #selector(sort))
         self.navigationController?.navigationBar.topItem?.rightBarButtonItem = sortbutton
         
@@ -128,7 +121,9 @@ class MainController: UIViewController {
     }
     
     fileprivate func updateDatasource(for country: Country) {
-        
+        if let index = self.countries.firstIndex(where: {$0.name == country.name }) {
+            self.countries[index] = country
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -138,6 +133,7 @@ class MainController: UIViewController {
 
 // MARK: Collection View Delegate & Datasource
 extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let count = countries.count //> 0 ? countries.count : 0
         return count
@@ -162,24 +158,26 @@ extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
         countryDisplay.country = country
         
         loadData(for: country, indexPath: indexPath)
+        
+        centerCell(for: indexPath)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let midPoint = collectionView.bounds.width/2 + collectionView.contentOffset.x
         
         collectionView.visibleCells.forEach({ (cell) in
-            if midPoint > cell.frame.minX && midPoint < cell.frame.maxY {
+            // Round to the tens and then find the cell that is closest to the midpoint
+            if round(midPoint/10) == round(cell.frame.midX/10) {
                 guard let indexPath = self.collectionView.indexPath(for: cell) else {
                     // Handle Error
                     return
                 }
-                let country = self.countries[indexPath.row]
-                self.loadData(for: country, indexPath: indexPath)
+                self.loadData(for: countries[indexPath.row], indexPath: indexPath)
             }
         })
     }
     
-    private func loadData(for country: Country, indexPath: IndexPath) {
+    fileprivate func loadData(for country: Country, indexPath: IndexPath) {
         // Unwrap ISO
         guard let iso = country.iso else {
             let alert = UIAlertController.init(title: "Invalid ISO Code", message: "Country code not found", preferredStyle: .alert)
@@ -206,6 +204,19 @@ extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
                 }
             }
         })
+    }
+    
+    fileprivate func centerCell(for indexPath: IndexPath) {
+        let midPoint = collectionView.bounds.width/2 + collectionView.contentOffset.x
+        
+        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+        
+        var delta: CGFloat = 0
+        delta = cell.frame.midX - midPoint
+        
+        let newContentOffset = CGPoint(x: (collectionView.contentOffset.x + delta), y: collectionView.contentOffset.y)
+        
+        collectionView.setContentOffset(newContentOffset, animated: true)
     }
 }
 
