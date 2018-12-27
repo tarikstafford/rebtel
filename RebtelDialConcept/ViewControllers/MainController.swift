@@ -48,22 +48,6 @@ class MainController: UIViewController {
         return cD
     }()
     
-    lazy var stackViewRegionButtons: UIStackView = {
-        let sv = UIStackView.init()
-        sv.axis = .horizontal
-        sv.alignment = .center
-        sv.distribution = .equalSpacing
-        for region in Region.allCases {
-            guard region != .Error else { break }
-            let b = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 50, height: 50))
-            b.setTitle(region.rawValue, for: .normal)
-            b.backgroundColor = .red
-            sv.addArrangedSubview(b)
-        }
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        return sv
-    }()
-    
     var countries = [Country]() {
         didSet{
             self.collectionView.reloadData()
@@ -81,9 +65,15 @@ class MainController: UIViewController {
         
         self.view.backgroundColor = .white
         self.title = "Country Finder"
-       
-        let sortbutton = UIBarButtonItem.init(title: "SORT", style: .plain, target: self, action: #selector(sort))
-        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = sortbutton
+    
+        let clearBarButton = UIBarButtonItem.init(title: "\u{f1f8}", style: .plain, target: self, action: #selector(clearQuery))
+        let attributesClearButton = [
+            NSAttributedString.Key.font: Theme.fontAwesome,
+            NSAttributedString.Key.foregroundColor: UIColor.white ]
+        clearBarButton.setTitleTextAttributes(attributesClearButton, for: .normal)
+        clearBarButton.setTitleTextAttributes(attributesClearButton, for: .highlighted)
+        clearBarButton.title = "\u{f1f8}"
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = clearBarButton
         
         addViews()
         fetchAll()
@@ -135,7 +125,7 @@ class MainController: UIViewController {
 extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let count = countries.count //> 0 ? countries.count : 0
+        let count = countries.count
         return count
     }
     
@@ -153,8 +143,7 @@ extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let country = countries[indexPath.row]
-        
-        // Load name first
+
         countryDisplay.country = country
         
         loadData(for: country, indexPath: indexPath)
@@ -162,6 +151,7 @@ extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
         centerCell(for: indexPath)
     }
     
+    // This allows selection of the cell that is at the center
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let midPoint = collectionView.bounds.width/2 + collectionView.contentOffset.x
         
@@ -169,10 +159,10 @@ extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
             // Round to the tens and then find the cell that is closest to the midpoint
             if round(midPoint/10) == round(cell.frame.midX/10) {
                 guard let indexPath = self.collectionView.indexPath(for: cell) else {
-                    // Handle Error
                     return
                 }
-                self.loadData(for: countries[indexPath.row], indexPath: indexPath)
+                self.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
+                self.collectionView(self.collectionView, didSelectItemAt: indexPath)
             }
         })
     }
@@ -196,7 +186,11 @@ extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
         _ = CountryAPIService.countryAPIServiceShared.send(FetchCountry.init(isoCode: iso), completion: { (result) in
             switch result {
             case .failure(let error):
-                print(error)
+                let alert = UIAlertController.init(title: "API Failed", message: (error.errorDescription ?? "No description"), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default))
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true, completion: nil)
+                }
             case.success(let response):
                 DispatchQueue.main.async {
                     self.countryDisplay.country = response
@@ -230,6 +224,8 @@ extension MainController: UISearchBarDelegate {
             return
         }
         
+        self.clearQuery()
+        
         var filteredCountries = [Country]()
         
         /*
@@ -249,11 +245,12 @@ extension MainController: UISearchBarDelegate {
         }
         
         self.countries = filteredCountries
+        var newContentOffset = collectionView.contentOffset
+        newContentOffset.x = 0
+        self.collectionView.setContentOffset(newContentOffset, animated: true)
     }
-}
-
-extension MainController {
-    @objc func sort() {
-        print("PRESSED")
+    
+    @objc private func clearQuery() {
+        self.countryDisplay.country = nil
     }
 }

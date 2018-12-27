@@ -24,8 +24,16 @@ extension UIColor {
 }
 
 extension UIFont {
-    static var main: UIFont {
+    static var mainHeader: UIFont {
         return UIFont(name: "Avenir", size: 20)!
+    }
+    
+    static var labelHeader: UIFont {
+        return UIFont(name: "Avenir-Medium", size: 17)!
+    }
+    
+    static var fontAwesome: UIFont {
+       return UIFont(name: "FontAwesome", size: 17)!
     }
 }
 
@@ -34,5 +42,7 @@ class Theme {
     static let primaryColor = UIColor.forestGreen
     static let secondaryColor = UIColor.synthPurple
     
-    static let headerFont = UIFont.main
+    static let headerFont = UIFont.mainHeader
+    static let labelHeader = UIFont.labelHeader
+    static let fontAwesome = UIFont.fontAwesome
 }

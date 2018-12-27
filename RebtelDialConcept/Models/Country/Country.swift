@@ -8,12 +8,6 @@
 
 import UIKit
 
-enum Region: String, Codable {
-    case Africa, Asia, Oceania, Americas, Europe, Polar, Error
-}
-
-extension Region: CaseIterable {}
-
 enum ImageType {
     case thumbnail, medium, large
 }
@@ -31,10 +25,11 @@ struct Country: Codable {
     let capital: String?
     let population: Int?
     let currencies: [Currency]?
-    let region: Region?
+    let region: String?
+    let coords: [Double]?
     
     enum CodingKeys: String, CodingKey {
-        case iso = "alpha2Code", name, capital, population, currencies, region
+        case iso = "alpha2Code", name, capital, population, currencies, region, coords = "latlng"
     }
     
     func getImage(type: ImageType) -> UIImage? {
@@ -59,7 +54,7 @@ struct Country: Codable {
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
                 if let jsonResult = jsonResult as? Dictionary<String, AnyObject> {
                     jsonResult.forEach({
-                        countries.append(Country.init(iso: $0.key, name: ($0.value as! String), capital: nil, population: nil, currencies: nil, region: nil))
+                        countries.append(Country.init(iso: $0.key, name: ($0.value as! String), capital: nil, population: nil, currencies: nil, region: nil, coords: nil))
                     })
                 }
             } catch {
